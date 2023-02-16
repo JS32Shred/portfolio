@@ -1,0 +1,1556 @@
+@import url('https://fonts.googleapis.com/css?family=Sofia');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Cormorant Garamond');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$bgColor: #1A2346;
+$hoverColor: #091235;
+$footerColor: #2B3457;
+$dark: #0F0F0F;
+$dark1: #111;
+$google: #F4B400;
+$facebook: #4267B2;
+$userGradient: linear-gradient(270deg, rgba(0, 0, 0, 1) 0%, rgba(9, 18, 53, 1) 100%);
+$scrollBar: linear-gradient(0deg, rgba(17, 17, 17, 0.07) 0%, rgba(255, 255, 255, 1) 50%, rgba(17, 17, 17, 0.07) 100%);
+$productGradient: linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(9, 18, 53, 1) 50%, rgba(255, 255, 255, 1) 100%);
+$orderGradient: linear-gradient(270deg, rgba(238, 238, 238, 1) 0%, rgba(9, 18, 53, 1) 50%, rgba(238, 238, 238, 1) 100%);
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    color: #FFF;
+}
+
+.loading{
+    overflow: hidden;
+}
+
+// ---------- Navigation Bar Styling ---------- \\
+
+header{
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    height: 100px;
+    display: grid;
+    grid-template-columns: auto auto fit-content(250px);
+    gap: 30px;
+    background: rgba(0, 0, 0, .3);
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: .3s;
+
+    // ---------- Logo Styling ---------- \\
+
+    .logo{
+        height: 100%;
+        font-family: 'Sofia', sans-serif;
+        font-size: 30px;
+        text-transform: capitalize;
+        display: flex;
+
+        a{
+            color: #FFF;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            img{
+                height: 60px;
+            }
+        }
+    }
+
+    // ---------- Navigation Links Styling ---------- \\
+
+    .navLinks{
+        display: flex;
+        gap: 30px;
+        justify-content: right;
+
+        a{
+            color: #FFF;
+            text-decoration: none;
+            font-size: 20px;
+            text-transform: capitalize;
+            transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+            padding: 10px;
+        }
+    
+        a:hover{
+            box-shadow: inset 130px 0 0 0 #FFF;
+            color: $hoverColor;
+        }
+    }
+
+    .navRightSide{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .icon{
+            color: #FFF;
+            font-size: 25px;
+            transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+            padding: 5px;
+            display: none;
+        }
+
+        .icon:hover{
+            box-shadow: inset 130px 0 0 0 #FFF;
+            color: $hoverColor;
+        }
+    }
+
+    // ---------- User Profile Button Styling ---------- \\
+
+    .showUser{
+        width: 50px;
+        height: 50px;
+        background: $userGradient;        
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        overflow: hidden;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    // ---------- Sign in & Create Account Button Styling ---------- \\
+
+    #openModal{
+        border: 1.5px solid #FFF;
+        padding: 10px;
+        border-radius: 50px;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 20px;
+        transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    }
+
+    #openModal:hover{
+        box-shadow: inset 130px 0 0 0 #FFF;
+        color: $hoverColor;
+    }
+}
+
+// ------------------------------------------------ \\
+// ---------- Registration Modal Styling ---------- \\
+// ------------------------------------------------ \\
+
+.registrationModal{
+    width: 80%;
+    height: 80%;
+    position: fixed;
+    z-index: 1;
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    background-color: $hoverColor;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 50px $hoverColor;
+    animation-name: slideIn;
+    animation-duration: .5s;
+
+    // ---------- Sign In Account Side ---------- \\
+
+    .modal-Left{
+        padding: 100px;
+
+        button{
+            border: 1px solid #FFF;
+            background-color: transparent;
+            color: #FFF;
+            height: 50px;
+            width: 200px;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            transition: .3s;
+            cursor: pointer;
+        }
+
+        button:hover{
+            box-shadow: 0 0 10px #FFF;
+            transition: .3s;
+        }
+
+        .signInForm{
+            display: flex;
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        // ---------- Sign In Form Styling ---------- \\
+
+        .signInFormContent{
+            height: 100%;
+            width: 100%;
+            display: none;
+            animation-name: fadeIn;
+            animation-duration: 1s;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+
+            form{
+                display: grid;
+                grid-template-columns: 40px 1fr;
+                gap: 10px;
+                width: 100%;
+
+                .fa{
+                    color: #FFF;
+                }
+
+                input[type=submit]{
+                    width: 200px;
+                    height: 50px;
+                    border: none;
+                    background-color: #FFF;
+                    color: $hoverColor;
+                    grid-column: span 2;
+                    margin: 0 auto;
+                    margin-top: 30px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    font-family: 'Montserrat', sans-serif;
+                    letter-spacing: 1px;
+                    cursor: pointer;
+                    transition: .3s;
+                }
+
+                input[type=submit]:hover{
+                    box-shadow: 0 0 10px #FFF;
+                    color: $footerColor;
+                    transition: .3s;
+                }
+
+                .txtInputStyles:focus{
+                    box-shadow: 0 0 10px #FFF;
+                }
+            }
+
+            h1{
+                margin: 0px;
+            }
+
+            span{
+                font-size: 30px;
+                font-family: 'Sofia', sans-serif;
+            }
+
+            .line{
+                border-bottom: 1px solid #FFF;
+            }
+
+            .rememberMe{
+                grid-column: span 2;
+                margin-top: 10px;
+            }
+
+            .signInOption{
+                background-color: #FFF;
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                cursor: pointer;
+
+                span{
+                    font-family: 'Roboto', sans-serif;
+                    color: #FFF;
+                    font-size: 15px;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                }
+
+                .fa{
+                    color: #FFF;
+                }
+            }
+
+            .google{
+                background-color: $google;
+                transition: .3s;
+            }
+
+            .google:hover{
+                box-shadow: 0 0 10px $google;
+                transition: .3s;
+            }
+
+            .facebook{
+                background-color: $facebook;
+                transition: .3s;
+            }
+
+            .facebook:hover{
+                box-shadow: 0 0 10px $facebook;
+                transition: .3s;
+            }
+
+            .orDivider{
+                display: grid;
+                grid-template-columns: 1fr auto 1fr;
+                width: 100%;
+                height: 40px;
+                align-items: center;
+                gap: 10px;
+                margin-top: 30px;
+
+                span{
+                    font-family: 'Montserrat', sans-serif;
+                    margin: 0;
+                    font-size: 20px;
+                    text-transform: uppercase;
+                }
+
+                .line{
+                    margin: 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    // ---------- Create Account Side ---------- \\
+
+    .modal-Right{
+        background-color: #FFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 100px;
+        
+        h1{
+            color: $hoverColor;
+        }
+
+        button{
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            color: $hoverColor;
+        }
+
+        button:hover{
+            color: $footerColor;
+        }
+
+        form{
+            display: grid;
+            grid-template-columns: 50px 1fr;
+            gap: 10px 0;
+            width: 100%;
+            padding: 20px;
+            box-shadow: 0 0 30px $hoverColor;
+
+            div{
+                display: flex;
+                gap: 30px;
+
+                .fa{
+                    height: auto;
+                    width: auto;
+                    background-color: transparent;
+                }
+
+                span{
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+
+            .termsDiv{
+                grid-column: span 2;
+                margin: 0 auto;
+                color: $hoverColor;
+                margin-top: 10px;
+                margin-bottom: 30px;
+                gap: 5px;
+            }
+
+            input[type=submit]{
+                grid-column: span 2;
+                width: 200px;
+                height: 50px;
+                margin: 0 auto;
+                border: none;
+                text-transform: uppercase;
+                font-family: 'Montserrat', sans-serif;
+                background-color: $hoverColor;
+                color: #FFF;
+                font-weight: bold;
+                letter-spacing: 1px;
+                cursor: pointer;
+                transition: .3s;
+            }
+
+            input[type=submit]:hover{
+                background-color: $footerColor;
+                transition: .3s;
+                box-shadow: 0 0 10px $footerColor;
+            }
+
+            .uploadFile{
+                grid-column: span 2;
+                height: 40px;
+                position: relative;
+
+                label{
+                    color: $hoverColor;
+                    display: grid;
+                    align-items: center;
+                    justify-content: center;
+                    grid-template-columns: 100px 1fr;
+                    gap: 10px;
+                    padding-right: 10px;
+                    height: 100%;
+                    cursor: pointer;
+
+                    .fa{
+                        background-color: #F22;
+                        color: #FFF;
+                        height: 100%;
+                        width: 100px;
+                        transition: .3s;
+                    }
+
+                    .fa:hover{
+                        box-shadow: 0 0 10px #F00;
+                        transition: .3s;
+                    }
+                }
+            }
+
+            .hideDefaultFileInput{
+                width: 0.1px;
+                height: 0.1px;
+                opacity: 0;
+                overflow: hidden;
+                position: absolute;
+                z-index: -1;
+            }
+        }
+    }
+
+    // ---------- End of Modal Side Right ---------- \\
+    // ---------- Modal Common Styling ---------- \\
+
+    .txtInputStyles{
+        height: 40px;
+        font-size: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border: none;
+        font-family: 'Montserrat', sans-serif;
+        width: 100%;
+        border-bottom: 1px solid $hoverColor;
+        color: $hoverColor;
+        transition: .3s;
+    }
+
+    .txtInputStyles:focus{
+        outline: none;
+        box-shadow: 0 0 10px $hoverColor;
+        transition: .3s;
+    }
+
+    .fa{
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        text-align: center;
+        line-height: 40px;
+        color: $hoverColor;
+    }
+
+    .line{
+        border-bottom: 1px solid $hoverColor;
+        width: 80%;
+        margin-bottom: 50px;
+    }
+
+    h1{
+        font-size: 50px;
+        text-transform: capitalize;
+        font-weight: lighter;
+        margin-bottom: 10px;
+    }
+
+    h2{
+        font-weight: lighter;
+        text-align: center;
+        margin-bottom: 20px;
+        letter-spacing: 3px;
+    }
+
+    #closeRegModal{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        
+        .fa{
+            font-size: 30px;
+        }
+    }
+}
+
+// -------------------------------------------------- \\
+// ---------- Show User Data Modal Styling ---------- \\
+// -------------------------------------------------- \\
+
+.user-data{
+    position: fixed;
+    z-index: 1;
+    padding: 50px 100px 50px 100px;
+    width: 40%;
+    background-color: $hoverColor;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-transform: capitalize;
+    font-family: 'Sofia', sans-serif;
+    box-shadow: 0 0 50px $hoverColor;
+    animation-name: slideIn;
+    animation-duration: .5s;
+
+    h1{
+        font-weight: lighter;
+    }
+
+    h2{
+        font-weight: lighter;
+        text-transform: lowercase;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .userPicture{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;        
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #AAA;
+
+        .showUserImg{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;        
+            border-radius: 50%;
+        }
+
+        .changeImg{
+            width: 100%;
+            height: 50px;
+            background: rgba(0, 0, 0, .3);
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .fas{
+                font-size: 25px;
+                cursor: pointer;
+            }
+        }
+
+        .fa-user-circle-o{
+            font-size: 100px;
+            border-radius: 50%;
+        }
+    }
+
+    .userDetails{
+        font-family: 'Montserrat', sans-serif;
+        width: 100%;
+        margin-top: 20px;
+        box-shadow: 0 0 10px #FFF;
+        padding: 20px;
+
+        .line{
+            width: 100%;
+            height: 50px;
+            border-bottom: 1px solid #FFF;
+            display: grid;
+            grid-template-columns: 200px 1fr fit-content(50px);
+            align-items: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            cursor: pointer;
+
+            span{
+                font-weight: bold;
+            }
+
+            .floatRight{
+                font-weight: normal;
+            }
+
+            .lowerCase{
+                text-transform: lowercase;
+            }
+        }
+
+        .line:hover{
+            background-color: $bgColor;
+        }
+
+        .last{
+            border: none;
+        }
+    }
+
+    a{
+        background-color: #FFF;
+        width: 150px;
+        height: 50px;
+        font-family: 'Montserrat', sans-serif;
+        color: $hoverColor;
+        border-radius: 50px;
+        text-decoration: none;
+        line-height: 50px;
+        text-align: center;
+        margin-top: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .closeUserBtn{
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        background-color: transparent;
+        border: none;
+        color: #FFF;
+        font-size: 30px;
+        cursor: pointer;
+    }
+}
+
+// ------------------------------------------ \\
+// ---------- Hero Section Styling ---------- \\
+// ------------------------------------------ \\
+
+.heroSection{
+    width: 100%;
+    height: 700px;
+    background: url('../images/hero/heroImg1.jpg') no-repeat center;
+    background-size: cover;
+    position: relative;
+    
+    .headerTxt{
+        width: 700px;
+        height: 100%;
+        padding-left: 100px;
+        display: flex;
+        align-items: center;
+
+        h1{
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 80px;
+            font-weight: lighter;
+            display: block;
+            height: 100%;
+            margin-bottom: 50px;
+            text-shadow: 5px 5px 10px #FFF;
+        }
+
+        p{
+            letter-spacing: 3px;
+            margin-bottom: 50px;
+            line-height: 30px;
+        }
+
+        a{
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #FFF;
+            display: block;
+            height: 50px;
+            width: 200px;
+            border: 1px solid #FFF;
+            text-align: center;
+            line-height: 50px;
+            transition: .3s;
+        }
+
+        a:hover{
+            background-color: #FFF;
+            color: $dark;
+            transition: .3s;
+        }
+
+        div{
+            div{
+                width: 150px;
+                border-bottom: 1px solid #FFF;
+                margin-bottom: 50px;
+            }
+        }
+    }
+
+    // ---------- Carousel Styling ---------- \\
+
+    .carouselButtons{
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translate(-50%);
+        display: flex;
+        gap: 10px;
+
+        input[type="radio"]{
+            appearance: none;
+            color: #FFF;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #FFF;
+            border-radius: 50%;
+            transition: .3s;
+        }
+
+        input[type="radio"]:checked{
+            background-color: #FFF;
+            transition: .3s;
+        }
+
+        input[type="radio"]:hover{
+            background-color: #FFF;
+            transition: .3s;
+        }
+    }
+}
+
+// ---------------------------------------------------- \\
+// ---------- Top Section on Product Listing ---------- \\
+// ---------------------------------------------------- \\
+
+.topSection{
+    min-height: 500px;
+    width: 100%;
+    background-color: $hoverColor;
+    box-shadow: 0 0 20px $hoverColor;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    pointer-events: none;
+
+    h1{
+        font-size: 50px;
+    }
+
+    p{
+        font-size: 20px;
+        letter-spacing: 2px;
+        line-height: 35px;
+        width: 70%;
+    }
+}
+
+// ------------------------------------------ \\
+// ---------- List Watches Section ---------- \\
+// ------------------------------------------ \\
+
+.listWatches{
+    width: 100%;
+    padding: 50px;
+    text-align: center;
+    color: $hoverColor;
+
+    h1{
+        font-weight: lighter;
+    }
+
+    .watchesContainer{
+        display: grid;
+        gap: 100px;
+        grid-template-columns: repeat(3, auto);
+        justify-content: center;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    
+        .displayWatches{
+            width: 300px;            
+            cursor: pointer;
+            box-shadow: 0 0 10px $hoverColor;
+            display: flex;
+            flex-direction: column;
+    
+            .watchImg{
+                width: 100%;
+                padding: 20px;
+    
+                img{
+                    width: 100%;
+                    transition: .3s;
+                }
+
+                img:hover{
+                    transform: scale(1.1);
+                    transition: .3s;
+                }
+            }
+
+            .watchInfo{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+            }
+        }
+    }
+}
+
+.addToCartBtn{
+    height: 50px;
+    text-transform: uppercase;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #FFF;
+    background-color: $hoverColor;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.addToCartBtn:hover{
+    background-color: $footerColor;
+    transition: .3s;
+}
+
+// --------------------------------------- \\
+// ---------- Cart View Styling ---------- \\
+// --------------------------------------- \\
+
+.cartContainer{
+    width: 70%;
+    color: $hoverColor;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    padding-bottom: 100px;
+
+    // ---------- Product Listing Side ---------- \\
+
+    .cartView{
+        padding-right: 50px;
+
+        h1{
+            text-transform: capitalize;
+            margin-bottom: 50px;
+
+            span{
+                text-transform: lowercase;
+                color: #AAA;
+                font-size: 20px;
+                font-weight: lighter;
+            }
+        }
+        
+        .cartItem{
+            display: grid;        
+            grid-template-columns: auto 1fr;
+            border-top: 1px solid $hoverColor;
+            position: relative;
+
+            .watchImg{
+                width: 300px;
+                padding: 50px;
+
+                img{
+                    width: 100%;
+                }
+            }
+
+            .sideView{
+                display: flex;
+                flex-direction: column;
+                padding: 30px;
+                gap: 10px;
+
+                h1{
+                    margin: 0;
+                    font-size: 25px;
+                }
+
+                h2{
+                    font-weight: lighter;
+                    color: #AAA;
+                    font-size: 20px;
+                }
+            }
+
+            form{
+                position: absolute;
+                right: 0;
+                top: 0;
+
+                button{
+                    font-size: 30px;
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    // ---------- If Cart is Empty ---------- \\
+
+    .cartEmpty{
+        text-align: center;
+        grid-column: span 2;
+
+        p{
+            padding: 30px;
+            background-color: #FFF3CD;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        a{
+            text-transform: capitalize;
+            display: block;
+            text-decoration: none;
+            height: 50px;
+            line-height: 50px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        a:hover{
+            box-shadow: 0 0 10px $hoverColor;
+            transition: .3s;
+        }
+    }
+
+    // ---------- Order Summary ---------- \\
+
+    .checkOutContainer{
+        background-color: #EEE;
+        text-align: center;
+        padding: 30px;
+        height: fit-content;
+        text-transform: capitalize;
+        display: grid;
+        gap: 30px;
+        grid-template-columns: 1fr 1fr;
+
+        h1{
+            grid-column: span 2;
+        }
+
+        .line{
+            background: $orderGradient;
+            height: 1px;
+            width: 100%;
+            grid-column: span 2;
+        }
+
+        span{
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .toRight{
+            text-align: right;
+        }
+
+        a{
+            grid-column: span 2;
+            background-color: #0F0F0F;
+            height: 50px;
+            line-height: 50px;
+            color: #FFF;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: .3s;
+        }
+
+        a:hover{
+            transition: .3s;
+            background-color: #333;
+        }
+
+        .paymentMethods{
+            width: 100%;
+            font-size: 25px;
+            grid-column: span 2;
+            color: $hoverColor;
+        }
+
+        p{
+            grid-column: span 2;
+            text-transform: initial;
+        }
+    }
+
+    form{
+
+        button{
+            border: none;
+            background-color: #111;
+            color: #FFF;
+            padding: 10px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: .3s;
+            margin-top: 20px;
+        }
+
+        button:hover{
+            transition: .3s;
+            background-color: #333;
+        }
+
+        a{
+            text-transform: capitalize;
+            font-weight: bold;
+            color: $hoverColor;
+            text-decoration: none;
+        }
+
+        a:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+// ---------------------------------- \\
+// ---------- Product View ---------- \\
+// ---------------------------------- \\
+
+.viewProductDetails{
+    min-height: 700px;
+    width: 100%;
+    padding-bottom: 100px;
+
+    .detailContainer{
+        width: 60%;
+        margin: 0 auto;
+        box-shadow: 0 0 50px $hoverColor;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        color: $hoverColor;
+
+        img{
+            width: 100%;
+            padding: 50px;
+        }
+
+        .rightSide{
+            display: flex;
+            flex-direction: column;
+            padding: 50px;
+            gap: 20px;
+
+            span{
+                color: #AAA;
+                font-size: 25px;
+            }
+
+            h1{
+                font-size: 30px;
+            }
+
+            h2{
+                font-weight: lighter;
+            }
+
+            h3{
+                text-align: center;
+                font-size: 25px;
+            }
+
+            form{
+                button{
+                    width: 100%;
+                }
+            }
+        }
+
+        .ratingSpan{
+            float: right;
+            
+            .fa{
+                color: $hoverColor;
+            }
+        }
+
+        .productGradient{
+            width: 100%;
+            height: 1px;
+            background: $productGradient;
+            grid-column: span 2;
+        }
+
+        .descriptionDiv{
+            grid-column: span 2;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+    
+            h1{
+                text-transform: capitalize;
+            }
+
+            p{
+                line-height: 25px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}
+
+// --------------------------------------- \\
+// ---------- Main Page Styling ---------- \\
+// --------------------------------------- \\
+
+.content{
+    width: 100%;
+    text-align: center;
+
+    // ---------- Watches List Styling ---------- \\
+
+    .watchesPicks{
+        background-color: #111;
+        width: 100%;
+        min-height: 500px;
+        padding: 50px 20px 50px 20px;
+
+        h1{
+            text-transform: capitalize;
+            font-weight: lighter;
+        }
+        
+        .watchesContainer{
+            display: grid;
+            grid-template-columns: 40px auto 40px;
+            align-items: center;
+            gap: 10px;
+            margin-top: 50px;
+
+            button{
+                background-color: transparent;
+                color: #FFF;
+                border: none;
+                font-size: 30px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                height: 30%;
+                cursor: pointer;
+            }
+
+            button:active{
+                color: #AAA;
+            }
+
+            .watches{
+                display: grid;
+                gap: 30px;
+                grid-template-columns: repeat(10,auto);
+                overflow: scroll;
+                padding: 10px;
+        
+                .displayWatches{
+                    width: 250px;
+                    box-shadow: 0 0 10px #FFF;
+                    cursor: pointer;
+                    height: 100%;
+        
+                    .watchImg{
+                        width: 250px;
+                        height: 250px;
+                        background-color: #FFF;
+                        padding: 10px;
+
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .watchInfo{
+                        padding: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                    }
+                }
+            }
+        }
+
+        .watches::-webkit-scrollbar{
+            display: none;
+        }
+    }
+
+    // ---------- Parallax Styling ---------- \\
+
+    .parallax{
+        width: 100%;
+        height: 800px;
+        background: url('../images/parallax.jpg') no-repeat center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+}
+
+// ---------------------------------------- \\
+// ---------- Newsletter Styling ---------- \\
+// ---------------------------------------- \\
+
+.newsLetter{
+    width: 100%;
+    background-color: $hoverColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    h1{
+        font-weight: lighter;
+        font-size: 50px;
+    }
+
+    div{
+        width: 30%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        input[type="text"]{
+            font-family: 'Montserrat', sans-serif;
+            display: block;
+            margin: 0 auto;
+            width: 70%;
+            height: 50px;
+            font-size: 20px;
+            text-align: center;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #FFF;
+            color: #FFF;
+            transition: .3s;
+        }
+
+        input[type=text]:focus{
+            outline: none;
+            box-shadow: 0 0 20px #FFF;
+            transition: .3s;
+        }
+
+        p{
+            letter-spacing: 5px;
+            font-size: 25px;
+        }
+
+        div{
+            width: 100%;
+            display: block;
+
+            .privacyPolicy{
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+
+        button{
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            margin: 0 auto;
+            border: none;
+            transition: .3s;
+            border: 1px solid #FFF;
+        }
+
+        button:hover{
+            background-color: transparent;
+            box-shadow: 0 0 30px #FFF;
+            color: #FFF;
+            transition: .3s;
+        }
+    }
+}
+
+// ---------- Make Navbar Fixed ---------- \\
+
+.makeFixed{
+    position: fixed;
+    background-color: #111;
+    transition: .3s;
+}
+
+// ---------- Common Navbar Styling ---------- \\
+
+.navBarColor{
+    height: 100px;
+    width: 100%;
+    background-color: $hoverColor;
+    margin-bottom: 100px;
+}
+
+// ------------------------------------ \\
+// ---------- Footer Styling ---------- \\
+// ------------------------------------ \\
+
+.socialMedia{
+    height: 70px;
+    width: 100%;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    a{
+        font-size: 30px;
+        color: $hoverColor;
+        transition: .3s;
+    }
+
+    a:hover{
+        color: #AAA;
+        transition: .3s;
+    }
+}
+
+footer{
+    min-height: 500px;
+    width: 100%;
+    background-color: $footerColor;
+    padding: 100px;
+    display: grid;
+    gap: 50px;
+    justify-content: center;
+    text-align: center;
+
+    .footerLinks{
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        gap: 100px;
+        margin-bottom: 50px;
+
+        div{
+            display: flex;
+            flex-direction: column;
+            text-transform: capitalize;
+            gap: 10px;
+            text-align: left;
+
+            span{
+                margin-bottom: 30px;
+                font-size: 20px;
+            }
+
+            a{
+                color: #FFF;
+                text-decoration: none;
+            }
+            
+            a:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .paymentMethods{
+        margin: 0 auto;
+        display: flex;
+        font-size: 40px;
+        gap: 15px;
+    }
+
+    div{
+        line-height: 30px;
+    }
+}
+
+// ------------------------------------- \\
+// ---------- Account Created ---------- \\
+// ------------------------------------- \\
+
+.accountCreated{
+    position: fixed;
+    padding: 100px;
+    background-color: $hoverColor;
+    z-index: 1000;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 0 0 50px #FFF;
+    letter-spacing: 1px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: slideIn;
+    animation-duration: .5s;
+
+    #closeCreated{
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        border: none;
+        background-color: transparent;
+        color: #FFF;
+        font-size: 30px;
+        cursor: pointer;
+    }
+}
+
+// ------------------------------------ \\
+// ---------- Loading Screen ---------- \\
+// ------------------------------------ \\
+
+#loadingScreen{
+    position: fixed;
+    z-index: 10000;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+
+    div{
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        border: 4px solid #FFF;
+        opacity: 1;
+        border-radius: 50%;
+        animation: rippleFX 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    }
+
+    div:nth-child(2){
+        animation-delay: -0.5s;
+    }
+}
+
+// -------------------------------------- \\
+// ---------- Custom Scrollbar ---------- \\
+// -------------------------------------- \\
+
+::-webkit-scrollbar{
+    width: 3px;
+}
+
+::-webkit-scrollbar-track{
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb{
+    background: $scrollBar;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #FFF;
+}
+
+// -------------------------------- \\
+// ---------- Animations ---------- \\
+// -------------------------------- \\
+
+@keyframes slideIn{
+    from{
+        top: -50%;
+    }
+
+    to{
+        top: 50%;
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes rippleFX{
+    0%{
+        left: 50%;
+        top: 50%;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    4.9%{
+        left: 50%;
+        top: 50%;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    5%{
+        left: 50%;
+        top: 50%;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
+    100%{
+        left: 50%;
+        top: 50%;
+        width: 72px;
+        height: 72px;
+        opacity: 0;
+    }
+}
