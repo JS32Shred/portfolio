@@ -1,0 +1,789 @@
+// --------------------------------------- \\
+// ---------- Responsive Layout ---------- \\
+// --------------------------------------- \\
+
+// ---------- EX: iPad Pro 11 ---------- \\
+
+@media screen and (max-width: 834px){
+    header{
+        grid-template-columns: 1fr 1fr;
+        height: 70px;
+        z-index: 100;
+
+        .logo{
+            font-size: 15px;
+            
+            a{            
+                img{
+                    height: 30px;
+                }
+            }
+        }
+
+        .navLinks{
+            position: absolute;
+            flex-direction: column;
+            gap: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, .8);
+            top: 70px;
+            display: none;
+            animation-name: fadeIn;
+            animation-duration: .3s;
+
+            a{
+                text-align: center;
+                transition: .3s;
+            }
+
+            a:hover{
+                box-shadow: none;
+                background-color: #FFF;
+            }
+        }
+
+        .displayFlex{
+            display: flex;
+        }
+
+        .navRightSide{
+            justify-content: right;
+
+            .icon{
+                display: block;
+            }
+        }
+
+        #openModal{
+            font-size: 15px;
+        }
+
+        .showUser{
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .registrationModal{
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 1fr;
+        position: absolute;
+        margin-top: 70px;
+
+        .modal-Left{
+            padding: 20px;
+
+            .signInFormContent{
+                .line{
+                    margin: 20px;
+                }
+
+                .orDivider{
+                    margin: 0;
+                }
+            }
+        }
+
+        .modal-Right{
+            padding: 20px;
+
+            form{
+                padding: 20px;
+
+                div{
+                    gap: 10px;
+                }
+
+                input[type=submit]{
+                    width: 100%;
+                }
+            }
+
+            .line{
+                margin: 20px;
+            }
+        }
+
+        #closeRegModal{
+            top: 0;
+            right: 0;
+
+            .fa{
+                font-size: 20px;
+                color: #FFF;
+            }
+        }
+
+        h1{
+            font-size: 30px;
+            margin: 0;
+        }
+
+        h2{
+            font-size: 25px;
+        }
+    }
+
+    .user-data{
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        margin-top: 100px;
+        padding: 20px;
+
+        h1{
+            font-size: 30px;
+        }
+
+        h2{
+            font-size: 20px;
+        }
+
+        .userDetails{
+            
+            .line{
+                grid-template-columns: 120px 1fr fit-content(50px);
+                font-size: 15px;
+            }
+        }
+    }
+
+    .heroSection{
+        height: 500px;
+
+        .headerTxt{
+            width: 100%;
+            padding-left: 50px;
+
+            h1{
+                font-size: 50px;
+                margin-bottom: 10px;
+                width: 350px;
+            }
+
+            p{
+                font-size: 20px;
+                line-height: 25px;
+                margin-bottom: 15px;
+                width: 400px;
+            }
+
+            a{
+                height: 50px;
+                font-size: 15px;
+                line-height: 50px;
+                width: 150px;
+            }
+
+            div{
+                div{
+                    width: 100px;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        .carouselButtons{
+            bottom: 20px;
+
+            input[type=radio]{
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    .content{
+
+        .watchesPicks{
+            padding: 20px 10px 20px 10px;
+            min-height: 300px;
+
+            h1{
+                font-size: 30px;
+            }
+
+            .watchesContainer{
+                margin-top: 10px;
+                gap: 0;
+
+                button{
+                    font-size: 30px;
+                }
+
+                .watches{
+                    gap: 20px;
+
+                    .displayWatches{
+                        width: 200px;
+
+                        .watchImg{
+                            width: 200px;
+                            height: 200px;
+                        }
+
+                        .watchInfo{
+                            font-size: 15px;
+                            gap: 5px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .parallax{
+            height: 500px;
+        }
+    }
+
+    .cartContainer{
+        width: 100%;
+        grid-template-columns: auto;
+        padding-bottom: 50px;
+        text-align: center;
+
+        .cartView{
+            padding: 0;
+
+            h1{
+                font-size: 25px;
+                margin-bottom: 30px;
+    
+                span{
+                    font-size: 15px;
+                }
+            }
+            
+            .cartItem{
+                grid-template-columns: auto;
+                text-align: center;
+                padding: 20px;
+
+                .watchImg{
+                    width: 200px;
+                    margin: 0 auto;
+                    padding: 0;
+                }
+
+                .sideView{
+                    padding: 0;
+                    gap: 5px;
+                }
+            }
+        }
+
+        .checkOutContainer{
+            margin-bottom: 30px;
+        }
+    }
+
+    .topSection{
+        height: auto;
+        padding: 0 20px 0 20px;
+        gap: 10px;
+
+        h1{
+            font-size: 30px;
+        }
+
+        p{
+            width: 90%;
+            font-size: 15px;
+            line-height: 20px;
+        }
+    }
+
+    .listWatches{
+        padding: 0;
+        padding-top: 50px;
+
+        .watchesContainer{
+            grid-template-columns: auto;
+            gap: 50px;
+            padding: 20px 0 20px 0;
+
+            .displayWatches{
+                width: 200px;
+            }
+        }
+    }
+
+    .viewProductDetails{
+        padding-bottom: 50px;
+
+        .detailContainer{
+            width: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+
+            img{
+                padding: 20px;
+            }
+
+            .rightSide{
+                padding: 0 20px 20px 20px;
+            }
+        }
+    }
+
+    .newsLetter{
+        padding: 40px;
+
+        h1{
+            font-size: 40px;
+        }
+
+        div{
+            width: 60%;
+            gap: 20px;
+
+            p{
+                font-size: 20px;
+            }
+
+            input[type=text]{
+                width: 60%;
+                font-size: 15px;
+            }
+
+            button{
+                height: 50px;
+                width: 150px;
+                font-size: 20px;
+            }
+        }
+    }
+
+    .socialMedia{
+        height: 70px;
+        gap: 30px;
+
+        a{
+            font-size: 30px;
+        }
+    }
+
+    footer{
+        padding-top: 20px;
+        padding-bottom: 50px;
+
+        .footerLinks{
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin: 0;
+
+            div{
+                text-align: center;
+                gap: 10px;
+
+                span{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .paymentMethods{
+            font-size: 25px;
+        }
+    }
+
+    .navBarColor{
+        height: 70px;
+        margin-bottom: 30px;
+    }
+}
+
+// ---------- EX: iPhone 12 PRO MAX ---------- \\
+
+@media screen and (max-width: 428px){
+    header{
+        grid-template-columns: 1fr 1fr;
+        height: 70px;
+        z-index: 100;
+
+        .logo{
+            font-size: 15px;
+            
+            a{            
+                img{
+                    height: 30px;
+                }
+            }
+        }
+
+        .navLinks{
+            position: absolute;
+            flex-direction: column;
+            gap: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, .8);
+            top: 70px;
+            display: none;
+            animation-name: fadeIn;
+            animation-duration: .3s;
+
+            a{
+                text-align: center;
+                transition: .3s;
+            }
+
+            a:hover{
+                box-shadow: none;
+                background-color: #FFF;
+            }
+        }
+
+        .displayFlex{
+            display: flex;
+        }
+
+        .navRightSide{
+            justify-content: right;
+
+            .icon{
+                display: block;
+            }
+        }
+
+        #openModal{
+            font-size: 15px;
+        }
+
+        .showUser{
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .registrationModal{
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 1fr;
+        position: absolute;
+        margin-top: 70px;
+
+        .modal-Left{
+            padding: 20px;
+
+            .signInFormContent{
+                .line{
+                    margin: 20px;
+                }
+
+                .orDivider{
+                    margin: 0;
+                }
+            }
+        }
+
+        .modal-Right{
+            padding: 20px;
+
+            form{
+                padding: 20px;
+
+                div{
+                    gap: 10px;
+                }
+
+                input[type=submit]{
+                    width: 100%;
+                }
+            }
+
+            .line{
+                margin: 20px;
+            }
+        }
+
+        #closeRegModal{
+            top: 0;
+            right: 0;
+
+            .fa{
+                font-size: 20px;
+                color: #FFF;
+            }
+        }
+
+        h1{
+            font-size: 30px;
+            margin: 0;
+        }
+
+        h2{
+            font-size: 25px;
+        }
+    }
+
+    .user-data{
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        margin-top: 100px;
+        padding: 20px;
+
+        h1{
+            font-size: 30px;
+        }
+
+        h2{
+            font-size: 20px;
+        }
+
+        .userDetails{
+            
+            .line{
+                grid-template-columns: 120px 1fr fit-content(50px);
+                font-size: 15px;
+            }
+        }
+    }
+
+    .heroSection{
+        height: 400px;
+
+        .headerTxt{
+            width: 100%;
+            padding-left: 10px;
+
+            h1{
+                font-size: 30px;
+                margin-bottom: 10px;
+                width: 250px;
+            }
+
+            p{
+                font-size: 15px;
+                line-height: 20px;
+                margin-bottom: 15px;
+                width: 300px;
+            }
+
+            a{
+                height: 40px;
+                font-size: 15px;
+                line-height: 40px;
+                width: 120px;
+            }
+
+            div{
+                div{
+                    width: 100px;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        .carouselButtons{
+            bottom: 15px;
+
+            input[type=radio]{
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+
+    .content{
+
+        .watchesPicks{
+            padding: 20px 10px 20px 10px;
+            min-height: 250px;
+
+            h1{
+                font-size: 25px;
+            }
+
+            .watchesContainer{
+                margin-top: 10px;
+                gap: 0;
+
+                button{
+                    font-size: 20px;
+                }
+
+                .watches{
+                    gap: 20px;
+
+                    .displayWatches{
+                        width: 150px;
+
+                        .watchImg{
+                            width: 150px;
+                            height: 150px;
+                        }
+
+                        .watchInfo{
+                            font-size: 10px;
+                            gap: 5px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .parallax{
+            height: 500px;
+        }
+    }
+
+    .cartContainer{
+        width: 100%;
+        grid-template-columns: auto;
+        padding-bottom: 50px;
+        text-align: center;
+
+        .cartView{
+            padding: 0;
+
+            h1{
+                font-size: 25px;
+                margin-bottom: 30px;
+    
+                span{
+                    font-size: 15px;
+                }
+            }
+            
+            .cartItem{
+                grid-template-columns: auto;
+                text-align: center;
+                padding: 20px;
+
+                .watchImg{
+                    width: 200px;
+                    margin: 0 auto;
+                    padding: 0;
+                }
+
+                .sideView{
+                    padding: 0;
+                    gap: 5px;
+                }
+            }
+        }
+
+        .checkOutContainer{
+            margin-bottom: 30px;
+        }
+    }
+
+    .topSection{
+        height: auto;
+        padding: 0 20px 0 20px;
+        gap: 10px;
+
+        h1{
+            font-size: 30px;
+        }
+
+        p{
+            width: 90%;
+            font-size: 15px;
+            line-height: 20px;
+        }
+    }
+
+    .listWatches{
+        padding: 0;
+        padding-top: 50px;
+
+        .watchesContainer{
+            grid-template-columns: auto;
+            gap: 50px;
+            padding: 20px 0 20px 0;
+
+            .displayWatches{
+                width: 200px;
+            }
+        }
+    }
+
+    .viewProductDetails{
+        padding-bottom: 50px;
+
+        .detailContainer{
+            width: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+
+            img{
+                padding: 20px;
+            }
+
+            .rightSide{
+                padding: 0 20px 20px 20px;
+            }
+        }
+    }
+
+    .newsLetter{
+        padding: 20px;
+
+        h1{
+            font-size: 30px;
+        }
+
+        div{
+            width: 100%;
+            gap: 20px;
+
+            p{
+                font-size: 15px;
+            }
+
+            input[type=text]{
+                width: 100%;
+                font-size: 15px;
+            }
+
+            button{
+                height: 40px;
+                width: 120px;
+                font-size: 15px;
+            }
+        }
+    }
+
+    .socialMedia{
+        height: 50px;
+        gap: 20px;
+
+        a{
+            font-size: 20px;
+        }
+    }
+
+    footer{
+        padding-top: 20px;
+        padding-bottom: 50px;
+
+        .footerLinks{
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin: 0;
+
+            div{
+                text-align: center;
+                gap: 10px;
+
+                span{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .paymentMethods{
+            font-size: 25px;
+        }
+    }
+
+    .navBarColor{
+        height: 70px;
+        margin-bottom: 30px;
+    }
+}

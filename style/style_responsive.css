@@ -1,0 +1,604 @@
+@media screen and (max-width: 834px) {
+  header {
+    grid-template-columns: 1fr 1fr;
+    height: 70px;
+    z-index: 100;
+  }
+  header .logo {
+    font-size: 15px;
+  }
+  header .logo a img {
+    height: 30px;
+  }
+  header .navLinks {
+    position: absolute;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    top: 70px;
+    display: none;
+    animation-name: fadeIn;
+    animation-duration: 0.3s;
+  }
+  header .navLinks a {
+    text-align: center;
+    transition: 0.3s;
+  }
+  header .navLinks a:hover {
+    box-shadow: none;
+    background-color: #FFF;
+  }
+  header .displayFlex {
+    display: flex;
+  }
+  header .navRightSide {
+    justify-content: right;
+  }
+  header .navRightSide .icon {
+    display: block;
+  }
+  header #openModal {
+    font-size: 15px;
+  }
+  header .showUser {
+    width: 40px;
+    height: 40px;
+  }
+  .registrationModal {
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr;
+    position: absolute;
+    margin-top: 70px;
+  }
+  .registrationModal .modal-Left {
+    padding: 20px;
+  }
+  .registrationModal .modal-Left .signInFormContent .line {
+    margin: 20px;
+  }
+  .registrationModal .modal-Left .signInFormContent .orDivider {
+    margin: 0;
+  }
+  .registrationModal .modal-Right {
+    padding: 20px;
+  }
+  .registrationModal .modal-Right form {
+    padding: 20px;
+  }
+  .registrationModal .modal-Right form div {
+    gap: 10px;
+  }
+  .registrationModal .modal-Right form input[type=submit] {
+    width: 100%;
+  }
+  .registrationModal .modal-Right .line {
+    margin: 20px;
+  }
+  .registrationModal #closeRegModal {
+    top: 0;
+    right: 0;
+  }
+  .registrationModal #closeRegModal .fa {
+    font-size: 20px;
+    color: #FFF;
+  }
+  .registrationModal h1 {
+    font-size: 30px;
+    margin: 0;
+  }
+  .registrationModal h2 {
+    font-size: 25px;
+  }
+  .user-data {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    margin-top: 100px;
+    padding: 20px;
+  }
+  .user-data h1 {
+    font-size: 30px;
+  }
+  .user-data h2 {
+    font-size: 20px;
+  }
+  .user-data .userDetails .line {
+    grid-template-columns: 120px 1fr fit-content(50px);
+    font-size: 15px;
+  }
+  .heroSection {
+    height: 500px;
+  }
+  .heroSection .headerTxt {
+    width: 100%;
+    padding-left: 50px;
+  }
+  .heroSection .headerTxt h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    width: 350px;
+  }
+  .heroSection .headerTxt p {
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 15px;
+    width: 400px;
+  }
+  .heroSection .headerTxt a {
+    height: 50px;
+    font-size: 15px;
+    line-height: 50px;
+    width: 150px;
+  }
+  .heroSection .headerTxt div div {
+    width: 100px;
+    margin-bottom: 15px;
+  }
+  .heroSection .carouselButtons {
+    bottom: 20px;
+  }
+  .heroSection .carouselButtons input[type=radio] {
+    width: 20px;
+    height: 20px;
+  }
+  .content .watchesPicks {
+    padding: 20px 10px 20px 10px;
+    min-height: 300px;
+  }
+  .content .watchesPicks h1 {
+    font-size: 30px;
+  }
+  .content .watchesPicks .watchesContainer {
+    margin-top: 10px;
+    gap: 0;
+  }
+  .content .watchesPicks .watchesContainer button {
+    font-size: 30px;
+  }
+  .content .watchesPicks .watchesContainer .watches {
+    gap: 20px;
+  }
+  .content .watchesPicks .watchesContainer .watches .displayWatches {
+    width: 200px;
+  }
+  .content .watchesPicks .watchesContainer .watches .displayWatches .watchImg {
+    width: 200px;
+    height: 200px;
+  }
+  .content .watchesPicks .watchesContainer .watches .displayWatches .watchInfo {
+    font-size: 15px;
+    gap: 5px;
+  }
+  .content .parallax {
+    height: 500px;
+  }
+  .cartContainer {
+    width: 100%;
+    grid-template-columns: auto;
+    padding-bottom: 50px;
+    text-align: center;
+  }
+  .cartContainer .cartView {
+    padding: 0;
+  }
+  .cartContainer .cartView h1 {
+    font-size: 25px;
+    margin-bottom: 30px;
+  }
+  .cartContainer .cartView h1 span {
+    font-size: 15px;
+  }
+  .cartContainer .cartView .cartItem {
+    grid-template-columns: auto;
+    text-align: center;
+    padding: 20px;
+  }
+  .cartContainer .cartView .cartItem .watchImg {
+    width: 200px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .cartContainer .cartView .cartItem .sideView {
+    padding: 0;
+    gap: 5px;
+  }
+  .cartContainer .checkOutContainer {
+    margin-bottom: 30px;
+  }
+  .topSection {
+    height: auto;
+    padding: 0 20px 0 20px;
+    gap: 10px;
+  }
+  .topSection h1 {
+    font-size: 30px;
+  }
+  .topSection p {
+    width: 90%;
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .listWatches {
+    padding: 0;
+    padding-top: 50px;
+  }
+  .listWatches .watchesContainer {
+    grid-template-columns: auto;
+    gap: 50px;
+    padding: 20px 0 20px 0;
+  }
+  .listWatches .watchesContainer .displayWatches {
+    width: 200px;
+  }
+  .viewProductDetails {
+    padding-bottom: 50px;
+  }
+  .viewProductDetails .detailContainer {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .viewProductDetails .detailContainer img {
+    padding: 20px;
+  }
+  .viewProductDetails .detailContainer .rightSide {
+    padding: 0 20px 20px 20px;
+  }
+  .newsLetter {
+    padding: 40px;
+  }
+  .newsLetter h1 {
+    font-size: 40px;
+  }
+  .newsLetter div {
+    width: 60%;
+    gap: 20px;
+  }
+  .newsLetter div p {
+    font-size: 20px;
+  }
+  .newsLetter div input[type=text] {
+    width: 60%;
+    font-size: 15px;
+  }
+  .newsLetter div button {
+    height: 50px;
+    width: 150px;
+    font-size: 20px;
+  }
+  .socialMedia {
+    height: 70px;
+    gap: 30px;
+  }
+  .socialMedia a {
+    font-size: 30px;
+  }
+  footer {
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+  footer .footerLinks {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 0;
+  }
+  footer .footerLinks div {
+    text-align: center;
+    gap: 10px;
+  }
+  footer .footerLinks div span {
+    margin-bottom: 10px;
+  }
+  footer .paymentMethods {
+    font-size: 25px;
+  }
+  .navBarColor {
+    height: 70px;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 428px) {
+  header {
+    grid-template-columns: 1fr 1fr;
+    height: 70px;
+    z-index: 100;
+  }
+  header .logo {
+    font-size: 15px;
+  }
+  header .logo a img {
+    height: 30px;
+  }
+  header .navLinks {
+    position: absolute;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    top: 70px;
+    display: none;
+    animation-name: fadeIn;
+    animation-duration: 0.3s;
+  }
+  header .navLinks a {
+    text-align: center;
+    transition: 0.3s;
+  }
+  header .navLinks a:hover {
+    box-shadow: none;
+    background-color: #FFF;
+  }
+  header .displayFlex {
+    display: flex;
+  }
+  header .navRightSide {
+    justify-content: right;
+  }
+  header .navRightSide .icon {
+    display: block;
+  }
+  header #openModal {
+    font-size: 15px;
+  }
+  header .showUser {
+    width: 40px;
+    height: 40px;
+  }
+  .registrationModal {
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr;
+    position: absolute;
+    margin-top: 70px;
+  }
+  .registrationModal .modal-Left {
+    padding: 20px;
+  }
+  .registrationModal .modal-Left .signInFormContent .line {
+    margin: 20px;
+  }
+  .registrationModal .modal-Left .signInFormContent .orDivider {
+    margin: 0;
+  }
+  .registrationModal .modal-Right {
+    padding: 20px;
+  }
+  .registrationModal .modal-Right form {
+    padding: 20px;
+  }
+  .registrationModal .modal-Right form div {
+    gap: 10px;
+  }
+  .registrationModal .modal-Right form input[type=submit] {
+    width: 100%;
+  }
+  .registrationModal .modal-Right .line {
+    margin: 20px;
+  }
+  .registrationModal #closeRegModal {
+    top: 0;
+    right: 0;
+  }
+  .registrationModal #closeRegModal .fa {
+    font-size: 20px;
+    color: #FFF;
+  }
+  .registrationModal h1 {
+    font-size: 30px;
+    margin: 0;
+  }
+  .registrationModal h2 {
+    font-size: 25px;
+  }
+  .user-data {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    margin-top: 100px;
+    padding: 20px;
+  }
+  .user-data h1 {
+    font-size: 30px;
+  }
+  .user-data h2 {
+    font-size: 20px;
+  }
+  .user-data .userDetails .line {
+    grid-template-columns: 120px 1fr fit-content(50px);
+    font-size: 15px;
+  }
+  .heroSection {
+    height: 400px;
+  }
+  .heroSection .headerTxt {
+    width: 100%;
+    padding-left: 10px;
+  }
+  .heroSection .headerTxt h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    width: 250px;
+  }
+  .heroSection .headerTxt p {
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 15px;
+    width: 300px;
+  }
+  .heroSection .headerTxt a {
+    height: 40px;
+    font-size: 15px;
+    line-height: 40px;
+    width: 120px;
+  }
+  .heroSection .headerTxt div div {
+    width: 100px;
+    margin-bottom: 15px;
+  }
+  .heroSection .carouselButtons {
+    bottom: 15px;
+  }
+  .heroSection .carouselButtons input[type=radio] {
+    width: 15px;
+    height: 15px;
+  }
+  .content .watchesPicks {
+    padding: 20px 10px 20px 10px;
+    min-height: 250px;
+  }
+  .content .watchesPicks h1 {
+    font-size: 25px;
+  }
+  .content .watchesPicks .watchesContainer {
+    margin-top: 10px;
+    gap: 0;
+  }
+  .content .watchesPicks .watchesContainer button {
+    font-size: 20px;
+  }
+  .content .watchesPicks .watchesContainer .watches {
+    gap: 20px;
+  }
+  .content .watchesPicks .watchesContainer .watches .displayWatches {
+    width: 150px;
+  }
+  .content .watchesPicks .watchesContainer .watches .displayWatches .watchImg {
+    width: 150px;
+    height: 150px;
+  }
+  .content .watchesPicks .watchesContainer .watches .displayWatches .watchInfo {
+    font-size: 10px;
+    gap: 5px;
+  }
+  .content .parallax {
+    height: 500px;
+  }
+  .cartContainer {
+    width: 100%;
+    grid-template-columns: auto;
+    padding-bottom: 50px;
+    text-align: center;
+  }
+  .cartContainer .cartView {
+    padding: 0;
+  }
+  .cartContainer .cartView h1 {
+    font-size: 25px;
+    margin-bottom: 30px;
+  }
+  .cartContainer .cartView h1 span {
+    font-size: 15px;
+  }
+  .cartContainer .cartView .cartItem {
+    grid-template-columns: auto;
+    text-align: center;
+    padding: 20px;
+  }
+  .cartContainer .cartView .cartItem .watchImg {
+    width: 200px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .cartContainer .cartView .cartItem .sideView {
+    padding: 0;
+    gap: 5px;
+  }
+  .cartContainer .checkOutContainer {
+    margin-bottom: 30px;
+  }
+  .topSection {
+    height: auto;
+    padding: 0 20px 0 20px;
+    gap: 10px;
+  }
+  .topSection h1 {
+    font-size: 30px;
+  }
+  .topSection p {
+    width: 90%;
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .listWatches {
+    padding: 0;
+    padding-top: 50px;
+  }
+  .listWatches .watchesContainer {
+    grid-template-columns: auto;
+    gap: 50px;
+    padding: 20px 0 20px 0;
+  }
+  .listWatches .watchesContainer .displayWatches {
+    width: 200px;
+  }
+  .viewProductDetails {
+    padding-bottom: 50px;
+  }
+  .viewProductDetails .detailContainer {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .viewProductDetails .detailContainer img {
+    padding: 20px;
+  }
+  .viewProductDetails .detailContainer .rightSide {
+    padding: 0 20px 20px 20px;
+  }
+  .newsLetter {
+    padding: 20px;
+  }
+  .newsLetter h1 {
+    font-size: 30px;
+  }
+  .newsLetter div {
+    width: 100%;
+    gap: 20px;
+  }
+  .newsLetter div p {
+    font-size: 15px;
+  }
+  .newsLetter div input[type=text] {
+    width: 100%;
+    font-size: 15px;
+  }
+  .newsLetter div button {
+    height: 40px;
+    width: 120px;
+    font-size: 15px;
+  }
+  .socialMedia {
+    height: 50px;
+    gap: 20px;
+  }
+  .socialMedia a {
+    font-size: 20px;
+  }
+  footer {
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+  footer .footerLinks {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 0;
+  }
+  footer .footerLinks div {
+    text-align: center;
+    gap: 10px;
+  }
+  footer .footerLinks div span {
+    margin-bottom: 10px;
+  }
+  footer .paymentMethods {
+    font-size: 25px;
+  }
+  .navBarColor {
+    height: 70px;
+    margin-bottom: 30px;
+  }
+}/*# sourceMappingURL=style_responsive.css.map */
